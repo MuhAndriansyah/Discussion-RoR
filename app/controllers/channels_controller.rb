@@ -5,7 +5,7 @@ class ChannelsController < ApplicationController
   # GET /channels.json
   def index
     @channels = Channel.all
-    @discussions = Discussion.all.order('create_at desc')
+    @discussions = Discussion.all.order('created_at desc')
   end
 
   # GET /channels/1
