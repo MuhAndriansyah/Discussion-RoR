@@ -4,7 +4,7 @@ class RepliesController < ApplicationController
   before_action :set_discussion, only: [:create, :edit, :show, :update, :destroy]
 
   def new
-    
+
   end
 
   def create
