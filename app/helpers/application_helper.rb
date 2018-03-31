@@ -1,6 +1,10 @@
 module ApplicationHelper
   require 'redcarpet/render_strip'
 
+  def has_role?(role)
+    current_user && current_user.has_role?(role)
+  end
+
   class CodeRayify < Redcarpet::Render::HTML
     def block_code(code, language)
       CodeRay.scan(code,language).div

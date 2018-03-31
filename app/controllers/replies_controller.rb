@@ -8,7 +8,7 @@ class RepliesController < ApplicationController
   end
 
   def create
-     @reply = @discussion.replies.create(params[:reply].permit(:reply, :discussion_id))
+     @reply = @discussion.replies.create(reply_params)
      @reply.user_id = current_user.id
 
      respond_to do |format|
