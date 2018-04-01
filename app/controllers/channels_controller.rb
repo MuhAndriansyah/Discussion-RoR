@@ -45,7 +45,7 @@ class ChannelsController < ApplicationController
   def update
     respond_to do |format|
       if @channel.update(channel_params)
-        format.html { redirect_to channels_path, notice: 'Channel was successfully updated.' }
+        format.html { redirect_to channel_path(@channel), notice: 'Channel was successfully updated.' }
         format.json { render :show, status: :ok, location: @channel }
       else
         format.html { render :edit }
@@ -67,7 +67,7 @@ class ChannelsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_channel
-      @channel = Channel.find(params[:id])
+      @channel = Channel.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

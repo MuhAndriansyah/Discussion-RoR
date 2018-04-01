@@ -80,6 +80,8 @@ GEM
     erubi (1.7.0)
     execjs (2.7.0)
     ffi (1.9.21)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     gravatar_image_tag (1.2.0)
@@ -214,6 +216,7 @@ DEPENDENCIES
   coderay (~> 1.1, >= 1.1.2)
   coffee-rails (~> 4.2)
   devise
+  friendly_id (~> 5.1.0)
   gravatar_image_tag (~> 1.2)
   jbuilder (~> 2.5)
   jquery-rails (~> 4.3, >= 4.3.1)

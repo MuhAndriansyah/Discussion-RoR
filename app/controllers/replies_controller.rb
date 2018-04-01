@@ -29,7 +29,7 @@ class RepliesController < ApplicationController
    end
 
    def edit
-     @discussion = Discussion.find(params[:discussion_id])
+     @discussion = Discussion.friendly.find(params[:discussion_id])
      @reply = @discussion.replies.find(params[:id])
    end
 
@@ -51,11 +51,11 @@ class RepliesController < ApplicationController
    private
 
    def set_discussion
-     @discussion = Discussion.find(params[:discussion_id])
+     @discussion = Discussion.friendly.find(params[:discussion_id])
    end
 
    def set_reply
-     @reply = Reply.find(params[:id])
+     @reply = Reply.friendly.find(params[:id])
    end
 
    def reply_params
