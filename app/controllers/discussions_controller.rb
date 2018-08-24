@@ -6,7 +6,11 @@ class DiscussionsController < ApplicationController
   # GET /discussions
   # GET /discussions.json
   def index
+    if params[:search]
+      @discussions = Discussion.where("LOWER(title) like ?", "%#{params[:search].downcase}%")
+    else
     @discussions = Discussion.all.order('created_at desc')
+    end
   end
 
   # GET /discussions/1

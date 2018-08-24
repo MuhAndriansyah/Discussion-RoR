@@ -6,5 +6,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   has_many :discussions
+  has_many :replies
   has_many :channels, through: :discussions
 end

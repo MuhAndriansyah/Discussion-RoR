@@ -42,6 +42,15 @@
                 <%= link_to 'New Discussion', new_discussion_path , class:"button is-info" %>
               </div>
             </div>
+            <div class="navbar-item">
+              <div class="field has-addons">
+             <%= form_tag discussions_path, method: :get do %>
+             <div class="control">
+               <%= text_field_tag :search, params[:search],class:"input", placeholder:"Find a Discussion" %>
+            </div>
+              <% end %>
+          </div>
+            </div>
             <div class="navbar-item has-dropdown is-hoverable">
               <%= link_to 'Account', edit_user_registration_path, class: "navbar-link" %>
               <div class="navbar-dropdown is-right">
@@ -56,6 +65,14 @@
               <p class="control">
                 <%= link_to 'New Discussion', new_discussion_path, class:"button is-info" %>
               </p>
+
+              <div class="field has-addons">
+             <%= form_tag discussions_path, method: :get do %>
+             <div class="control">
+               <%= text_field_tag :search, params[:search],class:"input", placeholder:"Find a Discussion" %>
+            </div>
+              <% end %>
+            </div>
 
               <p class="control">
                 <%= link_to "Sign In", new_user_session_path, class: "button is-light"%>
